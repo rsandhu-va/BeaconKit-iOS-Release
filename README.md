@@ -1,0 +1,1 @@
+# BeaconKit-iOS-Release
