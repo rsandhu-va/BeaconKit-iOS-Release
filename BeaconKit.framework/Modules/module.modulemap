@@ -1,0 +1,6 @@
+framework module BeaconKit {
+  umbrella header "BeaconKit.h"
+
+  export *
+  module * { export * }
+}
