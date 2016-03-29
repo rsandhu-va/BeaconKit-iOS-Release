@@ -39,7 +39,7 @@ In Swift, you need to add `#import <BeaconKit/BeaconKit.h>` to an *Objective-C B
 
 ## Usage
 
-#### Launch Beacon Manager
+### Launch Beacon Manager
 
 Instantiate the beacon manager and start monitoring.
 
@@ -48,6 +48,24 @@ Instantiate the beacon manager and start monitoring.
 `manager.delegate = self;`
 
 `[manager startupWithToken:@"<my-token>"];`
+
+### Monitor Checkins
+
+Implement the following `VNBeaconManagerDelegate` methods:
+
+`- (void)didCheckinToVenueWithId:(NSString *)venueId;`
+
+`- (void)didCheckoutToVenueWithId:(NSString *)venueId;`
+
+### Coupons
+
+Retrieve coupons for the venue a customer has encountered.
+
+`+ (void)couponsForVenue:(NSString* )venueId
+              withToken:(NSString *)token
+                success:(void (^)(NSArray* result))success
+                failure:(void (^)(NSError* error))failure;`
+                
 
 ## Author
 
